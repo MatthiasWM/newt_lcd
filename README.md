@@ -17,10 +17,29 @@ So here is a description of my setup above that has proven to work.
 
 We have tow RP2040 Pico W, the second board is the Debug Probe for the first board. This needs 6 jumpers from RP1 to RP2 (debugger):
 
-- 39 - VSYS - 39
-- 40 - GND - 40
-- SWCLK - GP2 - 4
-- SWDIO - GP3 - 5
-- 2 - RX0 - TX1 - 7
-- 1 - TX0 - RX1 - 6
+| Pin | Signal | Signal | Pin |
+| --- | ------ | ------ | --- |
+| 39 | VSYS | VSYS | 39 |
+| 40 | GND | GND | 40 |
+| X1 | SWCLK | GP2 | 4 |
+| X3 | SWDIO | GP3 | 5 |
+| 2 | RX0 | TX1 | 7 |
+| 1 | TX0 | RX1 | 6 |
+
+The second bunch of connectors go to the new TFT display. This part is quite flexible. We could connect an e-Papre display here. Waveshare has a nice 5.65" module that fits almost perfectly into the Newton case. On the left is the RP2040 Pico W, on the right are the pins of the Waveshare 4.0" 480x320 TFT:
+
+| Pin | Signal | Signal | Pin |
+| --- | ------ | ------ | --- |
+| 18 | +3V | VCC | 1 |
+| 36 | GND | GND | 2 |
+| 22 | GP17 | CS | 3 |
+| 19 | GP14 | RESET | 4 |
+| 20 | GP15 | DC/RS | 5 |
+| 25 | GP19 | SDI | 6 |
+| 24 | GP18 | SCK | 7 |
+| 18 | +3V | LED | 8 |
+| 21 | GP16 | SDO | 9 |
+|  | n.c. | TOUCH... | 10..14 |
+
+
 
